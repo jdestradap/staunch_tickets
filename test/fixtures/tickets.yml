@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  flight_date: 2012-04-30 20:54:58
+  flight_duration: 1.5
+  insurance: false
+  price: 1
+  from_location: MyString
+  string: MyString
+  to_location: MyString
+
+two:
+  name: MyString
+  flight_date: 2012-04-30 20:54:58
+  flight_duration: 1.5
+  insurance: false
+  price: 1
+  from_location: MyString
+  string: MyString
+  to_location: MyString

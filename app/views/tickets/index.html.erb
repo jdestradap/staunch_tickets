@@ -1,0 +1,14 @@
+<h1>Tickets#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<ul>
+<% @tickets.each do |ticket| %>
+	<li>
+		<%= link_to ticket.name, ticket %>
+		by <%= ticket.company.name %>
+	</li>
+<% end %> 
+</ul>
+
+
+<%= link_to 'logout', destroy_user_session_path, method: :delete %>
