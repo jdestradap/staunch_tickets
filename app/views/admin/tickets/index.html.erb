@@ -1,0 +1,26 @@
+<%= will_paginate @admin_tickets, :class => "apple_pagination" %>
+<h1>Listing admin_tickets</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Id </th>
+    <th>Name</th>
+    <th>Company</th>
+    <th>Actions</th>
+  </tr>
+
+<% @admin_tickets.each do |admin_ticket| %>
+  <tr>
+    <td><%= admin_ticket.id %></td>
+    <td><%= admin_ticket.name %></td>
+    <td><%= admin_ticket.company.name %></td>
+    <td><%= link_to 'Show', admin_ticket_path(admin_ticket) %> |
+        <%= link_to 'Edit', edit_admin_ticket_path(admin_ticket) %> | 
+        <%= link_to 'Destroy', admin_ticket_path(admin_ticket), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Ticket', new_admin_ticket_path %>

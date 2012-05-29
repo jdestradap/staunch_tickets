@@ -1,0 +1,36 @@
+<%= form_for(@admin_ticket, url: admin_tickets_path, :html => {:class => "form-horizontal"}) do |f| %>
+<field>
+  <% if @admin_ticket.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_ticket.errors.count, "error") %> prohibited this admin_ticket from being saved:</h2>
+
+      <ul>
+      <% @admin_ticket.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <label type="text" class="control-label" for="name">name: </label>
+    <div class="controls">
+      <%= f.text_field :name, :class => "input-xlarge", :id => "name" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label type="text" class="control-label" for="price">price: </label>
+    <div class="controls">
+      <%= f.text_field :price, :class => "input-xlarge", :id => "price" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <label type="text" class="control-label" for="company">company: </label>
+    <div class="controls">
+       <%= f.select :company_id, options_for_select(Company.all.collect{|x| [x.name, x.id]},), :class => "input-xlarge", :id => "company" %>
+    </div>
+  </div>
+  <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<field/>
+<% end %>

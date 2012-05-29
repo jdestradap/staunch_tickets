@@ -1,0 +1,10 @@
+<div class="<%= cycle 'leftbox', 'rightbox'%>">
+  <h2><%= link_to ticket.name, ticket %></h2>
+  <p>
+  	<b>Price:</b> <b>$<%= ticket.price %></b></p>
+  <p><b>Company:</b><%= ticket.company.name %></p>
+  <p class="readmore">
+  	<%= link_to "BUY NOW", '#' %>
+  </p>
+  <div class="clear"></div>
+</div><!-- end .leftbox -->

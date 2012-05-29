@@ -9,8 +9,10 @@ module SampleData
     User.delete_all
 
     User.create!({:first_name => 'Admin', :email => 'admin@example.com', :password => '123123'})
-    User.create!({:first_name => 'Admin', :email => 'admin2@example.com', :password => '123123'})
-    User.create!({:first_name => 'Admin', :email => 'admin3@example.com', :password => '123123'})
+    User.create!({:first_name => 'John', :email => 'john@example.com', :password => '123123'})
+    User.create!({:first_name => 'Carl', :email => 'carl@example.com', :password => '123123'})
+
+    User.find_by_email('admin@example.com').update_attribute(:admin, true)
   end
 
   def self.create_companies

@@ -1,0 +1,27 @@
+<%= will_paginate @admin_companies, :class => "apple_pagination" %>
+
+<h1>Listing admin_companies</h1>
+
+<table class="table table-striped">
+  <tr>
+    <th>Id </th>
+    <th>Name</th>
+    <th>Tickets</th>
+    <th>Actions</th>
+  </tr>
+
+<% @admin_companies.each do |admin_company| %>
+  <tr>
+    <td><%= admin_company.id %></td>  
+    <td><%= admin_company.name %></td>  
+    <td><%= admin_company.tickets.count %></td>  
+    <td><%= link_to 'Show', admin_company_path(admin_company) %> | 
+        <%= link_to 'Edit', edit_admin_company_path(admin_company) %> |
+        <%= link_to 'Destroy', admin_company_path(admin_company), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Company', new_admin_company_path, class: 'btn btn-primary' %>

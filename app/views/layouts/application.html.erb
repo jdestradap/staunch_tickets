@@ -1,17 +1,50 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>StaunchTickets</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+	<title>Staunch Tickets</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <%= stylesheet_link_tag "style" %>
+  <%= javascript_include_tag 'jquery', 'jquery_ujs' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-
-<%= yield %>
-
+  <div id="wrapper">
+      <div id="inner">
+          <div id="header">
+              <%= render 'shared/user_bar' %>
+              <h1><img src="/assets/logo.gif" width="519" height="63" alt="Online Movie Store" /></h1>
+              <div id="nav">
+                  <a href="#">your account</a> | <a href="#">view cart</a> | <a href="http://www.freewebsitetemplates.com">help</a>
+              </div><!-- end nav -->
+               <%= link_to image_tag("/assets/header_1.jpg", :size => "744x145"), "#" %>
+               <%= link_to image_tag("/assets/header_2.jpg", :size => "744x48"), "#" %>
+          </div><!-- end header -->
+          <dl id="browse">
+              <%= render partial: 'shared/sidebar' %>
+          </dl>
+          
+          <div id="body">
+              <div class="inner">
+                <ul class='messages'>
+                <% flash.each do |status, message| %>
+                  <li class='<%= status %>'>
+                    <%= message %>
+                  </li>
+                <% end %>
+                <%= yield %>
+              </div><!-- end .inner -->
+          </div><!-- end body -->
+          
+          <div class="clear"></div>
+          <div id="footer">
+              Web design by <a href="#">Free Website Templates</a>
+              
+              &nbsp;
+              <div id="footnav">
+                  <a href="#">Legal</a> | <a href="#">Privacy Policy</a>
+              </div><!-- end footnav -->
+          </div><!-- end footer -->
+      </div><!-- end inner -->
+  </div><!-- end wrapper -->
 </body>
 </html>

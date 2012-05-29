@@ -1,0 +1,19 @@
+<h2>Create new ticket!</h2>
+<%= form_for @ticket do |f| %> 
+	<%= @ticket.errors.full_messages.join(', ') %>
+	<p>
+		name:
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		price:
+		<%= f.text_field :price %>
+	</p>
+	<p>
+		company:
+		<%= f.select :company_id, options_for_select(Company.all.collect{|x| [x.name, x.id]}) %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %> 

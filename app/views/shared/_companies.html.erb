@@ -1,0 +1,6 @@
+<dt>Full Company Lists</dt>
+<% @sidebar_companies.each_with_index do |company, index| %>
+    <dd class="<%= company_item_class(index, @sidebar_companies.size) %>">
+   	<%= link_to company.name, company %>
+	</dd>
+<% end %>

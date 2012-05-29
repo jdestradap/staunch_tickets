@@ -1,0 +1,9 @@
+<% @tickets.each_with_index do |ticket, index| %>
+  <%= render  ticket %>
+  <% if index > 0 && index % 2 == 1 %>
+    <div class="clear br"></div>
+  <% end %>                   
+<% end %>                  
+<div style='clear: both'></div>
+
+

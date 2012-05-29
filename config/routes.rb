@@ -1,8 +1,17 @@
 StaunchTickets::Application.routes.draw do
 
+  namespace :admin do 
+    resources :companies
+    resources :tickets 
+    resources :users 
+  end
+
   resources :tickets
+  resources :companies
 
   devise_for :users
+
+  match '/admin' => 'admin#index'
 
   root :to => "tickets#index"
 

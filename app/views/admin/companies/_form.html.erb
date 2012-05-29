@@ -1,0 +1,28 @@
+<%= form_for(@admin_company, url: admin_companies_path, :html => {:class => "form-horizontal"} ) do |f| %>
+  <% if @admin_company.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@admin_company.errors.count, "error") %> prohibited this admin_company from being saved:</h2>
+
+      <ul>
+      <% @admin_company.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <label type="text" class="control-label" for="name">name: </label>
+        <div class="controls">
+      <%= f.text_field :name, :class => "input-xlarge", :id => "name" %>
+    </div>
+  </div>
+   <div class="control-group">
+    <label type="text" class="control-label" for="logo_url">logo url: </label>
+        <div class="controls">
+      <%= f.text_field :logo_url, :class => "input-xlarge", :id => "logo_url" %>
+    </div>
+  </div> 
+  <div class="form-actions">
+        <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
